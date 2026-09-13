@@ -608,6 +608,14 @@ main, header, footer, section, .nav, .hero, .shell, .sec, .foot {
 .faq .prize-list{margin:10px 0 0;padding-left:24px;list-style:disc;}
 .faq .prize-list li{padding-left:6px;}
 
+/* ---------- hackathon dates ---------- */
+.hackathon-dates{overflow-x:auto;}
+.hackathon-dates table{width:100%;border-collapse:collapse;margin-top:8px;min-width:520px;}
+.hackathon-dates th,.hackathon-dates td{text-align:left;padding:15px 16px;border-bottom:1px solid var(--border);font-size:15.5px;line-height:1.5;}
+.hackathon-dates th{font-family:var(--display);font-weight:700;color:var(--on);background:var(--card-hover);}
+.hackathon-dates td:first-child{width:32%;font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--accent);white-space:nowrap;}
+.hackathon-dates tr:last-child td{border-bottom:none;}
+
 /* ---------- floating actions ---------- */
 .fab{
   position:fixed;right:22px;bottom:22px;z-index:90;
@@ -1199,7 +1207,23 @@ a:has(> .social-ico){display:inline-flex;align-items:center;gap:9px;}
       </ul>
     </aside>
 
-    <div class="reveal" style="--d:.28s;margin-top:56px;">
+    <aside class="card-note hackathon-dates reveal" style="--d:.28s;margin-top:56px;">
+      <h3>Competition structure &amp; important dates</h3>
+      <table>
+        <thead>
+          <tr><th scope="col">Date</th><th scope="col">Event</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>12 September</td><td>Topic Reveal</td></tr>
+          <tr><td>12 October</td><td>Stage 1 Submission Deadline</td></tr>
+          <tr><td>17–18 October</td><td>Finalists Announcement</td></tr>
+          <tr><td>24 October</td><td>Teaching &amp; Keynote Sessions</td></tr>
+          <tr><td>25 October</td><td>Stage 2 — Hybrid Judging</td></tr>
+        </tbody>
+      </table>
+    </aside>
+
+    <div class="reveal" style="--d:.34s;margin-top:56px;">
       <p class="day-intro">Open to both beginners and experienced participants — whether you're interested in quantum algorithms, QML, QNNs, simulation, optimisation, cybersecurity, sustainability, finance, or taking your first step into quantum computing.</p>
     </div>
   </div>
