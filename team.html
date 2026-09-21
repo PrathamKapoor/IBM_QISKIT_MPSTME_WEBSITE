@@ -75,32 +75,35 @@ img{max-width:100%;display:block;}
 
 /* ---------- nav ---------- */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,16,36,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--navy-line);}
-.nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;}
-.identity{display:flex;align-items:center;gap:12px;}
-.brand{display:flex;align-items:center;gap:12px;font-weight:600;font-size:16.5px;white-space:nowrap;color:#EFF2FA;}
-.ibm-quantum{display:inline-flex;align-items:center;padding:7px 12px;border:1px solid rgba(255,116,184,.55);border-radius:var(--pill);font-size:15px;font-weight:700;color:#fff;background:rgba(255,116,184,.14);}
-.association-logos{display:flex;align-items:center;gap:8px;padding-left:14px;border-left:1px solid rgba(255,255,255,.2);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:clamp(12px, 1.6vw, 24px);padding:18px 0;}
+.identity{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+.brand{display:flex;align-items:center;gap:12px;font-weight:600;font-size:16px;white-space:nowrap;color:#EFF2FA;flex-shrink:0;}
+.ibm-quantum{display:inline-flex;align-items:center;padding:7px 12px;border:1px solid rgba(255,116,184,.55);border-radius:var(--pill);font-size:14.5px;font-weight:700;color:#fff;background:rgba(255,116,184,.14);white-space:nowrap;flex-shrink:0;}
+.association-logos{display:flex;align-items:center;gap:8px;padding-left:14px;border-left:1px solid rgba(255,255,255,.2);flex-shrink:0;}
 .association-logos img{display:block;width:auto;height:36px;max-width:72px;object-fit:contain;background:#fff;padding:3px;border-radius:6px;}
-.nav-links{display:flex;align-items:center;gap:clamp(14px, 1.8vw, 30px);}
-.nav-links a{position:relative;font-size:15px;font-weight:450;color:#A4ADC8;transition:color .25s;}
+.nav-links{display:flex;align-items:center;gap:clamp(10px, 1.4vw, 24px);flex-shrink:1;}
+.nav-links a{position:relative;font-size:14.5px;font-weight:450;color:#A4ADC8;transition:color .25s;white-space:nowrap;}
 .nav-links a:hover{color:#fff;}
 .nav-links a.home-link{padding:8px 14px;border-radius:var(--pill);background:var(--pink);color:#0A1024;font-weight:600;}
 .nav-links a.home-link:hover{background:var(--pink-lite);color:#0A1024;}
 .nav-links a[aria-current="page"]{color:#fff;}
 .nav-links a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;background:var(--pink-lite);border-radius:var(--pill);}
-.nav .btn{padding:12px 24px;font-size:14.5px;white-space:nowrap;}
-.nav-actions{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.nav .btn{padding:10px 18px;font-size:14px;white-space:nowrap;}
+.nav-actions{display:flex;align-items:center;gap:8px;flex-shrink:0;}
 .menu-btn{display:none;background:transparent;border:1px solid var(--navy-line);border-radius:var(--pill);color:#EFF2FA;font:inherit;font-size:14.5px;font-weight:500;padding:11px 22px;cursor:pointer;transition:border-color .3s;}
 .menu-btn:hover{border-color:var(--pink-lite);}
 .menu{display:none;overflow:hidden;max-height:0;transition:max-height .45s cubic-bezier(.3,.8,.3,1);}
 .menu-in{padding:6px 0 22px;display:flex;flex-direction:column;gap:2px;}
-.menu-in a{padding:14px 18px;border-radius:var(--r-md);font-size:16px;color:#A4ADC8;transition:background .25s,color .25s;}
+.menu-in a{padding:14px 18px;border-radius:var(--r-md);font-size:16px;color:#A4ADC8;transition:background .25s,color .25s;white-space:nowrap;}
 .menu-in a:hover{background:var(--navy-2);color:#fff;}
 .menu-in a.home-link{background:var(--pink);color:#0A1024;font-weight:600;}
 .menu-in a.home-link:hover{background:var(--pink-lite);color:#0A1024;}
 .menu-in .btn{margin-top:10px;justify-content:center;}
-@media (max-width:1180px){
-  .nav .btn-full-text{display:none;}
+@media (max-width:1440px){
+  .association-logos{display:none;}
+}
+@media (max-width:1200px){
+  .nav .btn-prefix{display:none;}
 }
 @media (max-width:980px){
   .nav-links{display:none;}
@@ -108,9 +111,6 @@ img{max-width:100%;display:block;}
   .menu{display:block;}
   .menu.open{max-height:560px;}
   .nav-actions,.nav-in>.btn{display:none;}
-}
-@media (max-width:1380px){
-  .association-logos{display:none;}
 }
 @media (max-width:600px){
   .brand{gap:6px;font-size:12.5px;}
@@ -262,7 +262,7 @@ a:has(> .social-ico){display:inline-flex;align-items:center;gap:9px;}
         <a href="team.html" aria-current="page">Our team</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-ghost" href="https://unstop.com/hackathons/qiskit-fall-fest-mukesh-patel-school-of-technology-management-and-engineering-nmims-mumbai-1748182" target="_blank" rel="noopener"><span class="btn-full-text">Register for </span>Hackathon</a>
+        <a class="btn btn-primary" href="https://unstop.com/hackathons/qiskit-fall-fest-mukesh-patel-school-of-technology-management-and-engineering-nmims-mumbai-1748182" target="_blank" rel="noopener"><span class="btn-prefix">Register for </span>Hackathon</a>
         <a class="btn btn-primary" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=SEPx0bXxCUqsmX6_ITy8gUTjGoNv6r5Mg-uGk0FUzYRUQldSRUdJNUZYMjQzQ0g0N0JBTDYxWVNPTS4u" target="_blank" rel="noopener">Register</a>
       </div>
       <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
@@ -278,7 +278,7 @@ a:has(> .social-ico){display:inline-flex;align-items:center;gap:9px;}
         <a href="index.html#venue">Location</a>
         <a href="index.html#faq">FAQ</a>
         <a href="team.html" aria-current="page">Our team</a>
-        <a class="btn btn-ghost" href="https://unstop.com/hackathons/qiskit-fall-fest-mukesh-patel-school-of-technology-management-and-engineering-nmims-mumbai-1748182" target="_blank" rel="noopener">Register for Hackathon</a>
+        <a class="btn btn-primary" href="https://unstop.com/hackathons/qiskit-fall-fest-mukesh-patel-school-of-technology-management-and-engineering-nmims-mumbai-1748182" target="_blank" rel="noopener">Register for Hackathon</a>
         <a class="btn btn-primary" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=SEPx0bXxCUqsmX6_ITy8gUTjGoNv6r5Mg-uGk0FUzYRUQldSRUdJNUZYMjQzQ0g0N0JBTDYxWVNPTS4u" target="_blank" rel="noopener">Register</a>
       </div>
     </div>
